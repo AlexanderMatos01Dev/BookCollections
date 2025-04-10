@@ -85,6 +85,11 @@ export function BookForm({ initialData, onSubmit, onCancel }: BookFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      {/* Título del formulario que cambia según si es edición o creación */}
+      <h2 className="text-xl font-bold form-title" data-testid="form-title">
+        {initialData ? "Editar Libro" : "Add Book"}
+      </h2>
+      
       <div className="space-y-2">
         <Label htmlFor="title">Book Title</Label>
         <Input
